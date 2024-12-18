@@ -1,0 +1,10 @@
+<h1>Create a Booking</h1>
+
+<p><strong>Selected Flight:</strong></p>
+<p>
+  <strong>Departure:</strong> <%= @flight.departure_airport.code %><br>
+  <strong>Arrival:</strong> <%= @flight.arrival_airport.code %><br>
+  <strong>Date/Time:</strong> <%= @flight.date_time.strftime('%Y-%m-%d %H:%M') %>
+  <p><strong>Number of Passengers:</strong> <%= @number_of_passengers %></p>
+</p>
+<%= link_to "Go back", flights_path%>

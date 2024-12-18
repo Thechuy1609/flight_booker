@@ -8,3 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.search{
+  background-color: rgba(206, 235, 235, 0.485);
+  width:fit-content; height: fit-content;
+}

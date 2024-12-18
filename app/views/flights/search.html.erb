@@ -1,0 +1,30 @@
+<h2>Not what you are looking for?, Search again: <%= link_to "Main page", flights_path%></h2>
+<h2>Available Flights:</h2>
+
+    <h2>Results</h2>
+<div class="search">
+    <table>
+        <thead>
+            <tr>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Flight Date</th>
+            </tr>
+        </thead>
+        <tbody>
+          <%= form_with url: new_booking_path, method: :get do |f| %>
+            <% @flights.each do |flight| %>
+                <tr>
+                    <td><%=flight.departure_airport.code %></td>
+                    <td><%= flight.arrival_airport.code %></td>
+                    <td><%= flight.date_time.strftime('%Y-%m-%d %H:%M') %></td>
+             <td><%= f.hidden_field :passengers, value: @number_of_passengers %></td>
+                    <td><%= f.radio_button :selected_flight_id, flight.id%></td>
+                </tr>
+            <% end %>
+</tbody>
+    </table>
+</div>
+<br>
+<%= f.submit "Choose Flight" %>
+<% end %>

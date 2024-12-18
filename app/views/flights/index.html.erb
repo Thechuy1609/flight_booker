@@ -1,0 +1,13 @@
+<h1>Flight Booking</h1>
+<%= form_with url: search_flights_path, method: :get do |f| %>
+    <%= f.label :departure_airport_id, "Departure Airport" %>
+    <%= f.select(:departure_airport_id,@flight_options_dep)%>
+    <%= f.label :arrival_airport_id, "Arrival Airport" %>
+    <%= f.select(:arrival_airport_id,@flight_options_arr)%>
+    <%= f.label :date_time, "Date" %>
+    <%= f.select(:date_time,@flight_options_date)%>
+    <%= f.label :passengers, "Passengers" %>
+    <%= f.select(:passengers, @number_of_passengers)%>
+    <%= f.submit "Search"%>
+  <%= %>
+<%end%>
