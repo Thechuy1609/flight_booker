@@ -1,0 +1,5 @@
+<%= form_with model: @booking do |f| %>
+  <%= f.hidden_field :flight_id, value: @flight.id %>
+    <%= f.text_field :passengers , value: @number_of_passengers%>
+  <%= f.submit "Confirm Booking" %>
+<% end %>

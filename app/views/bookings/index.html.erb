@@ -1,0 +1,7 @@
+<% @bookings.each do |b| %>
+    <li>
+      <%="#{b.flight.departure_airport.code} - #{b.flight.arrival_airport.code}"%>
+       <%=" - FLIGHT_ID:#{b.flight_id}" %>
+    </li>
+  <% end %>
+  <%= link_to "Main page", flights_path%>
